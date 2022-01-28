@@ -59,7 +59,7 @@ p{
 }
 
 .main-menu-list li a:hover{
-  border: red solid 3px;
+  border: red solid 1px;
 }
 
 /*  CONTENT */
@@ -137,7 +137,7 @@ p{
 }
 
 .descriptions-list li:hover{
-  border-left: red solid 5px;
+  border-left: red solid 2px;
 }
 .descriptions:nth-child(odd){
   background: #f7f7f7;
@@ -171,7 +171,16 @@ p{
 
 /* RESPONSIVITY */
 
-@media (max-width: 1000px){
+@media (max-width:900px) and (max-width:1000px){
+
+  .img-wrapper{
+    height: 100%;
+    object-fit: cover;
+  }
+  
+}
+
+@media (max-width: 899px){
   
   /* Content */
 
@@ -192,15 +201,19 @@ p{
     align-content: center;
     padding-right: 0px;
     text-align: center;
+    
   }
   
   .text-content h1{
     justify-self: center  ;
+    font-size: 3rem;
   }
   
   .text-content p {
     margin-left: 0px;
     padding: 10px;
+    font-size: 2rem;
+    line-height: 2rem;
   }
   
   .text-content a {
