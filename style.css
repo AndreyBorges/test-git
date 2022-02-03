@@ -1,9 +1,30 @@
+
 /*  GENTERAL CONTENT  */
-*{
+:root{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   outline: none;
+  --cor-primaria:red;
+  --cor-primaria-escura:rgb(160, 0, 0);
+  --fundo-1:#f7f7f7;
+  --fundo-2:white;
+  --texto:black;
+  --subtitle:rgba(0,0,0,.2);
+  --onda: url(./img/onda.svg) ;
+  --botao: white;
+}
+
+
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --fundo-1: #111111;
+    --fundo-2: #000000;
+    --texto:white;
+    --subtitle:rgba(255,255,255,.2);
+    --onda:url(./img/onda-escura.svg) ;
+  }
 }
 
 body{
@@ -11,9 +32,10 @@ body{
   display: grid;
   justify-items: center;
   gap: 60px;
-  background: #f7f7f7;
+  background: var(--fundo-1);
   margin-top: 60px;
   font-weight: 500;
+  color: var(--texto);
 }
 
 img{
@@ -49,17 +71,17 @@ p{
   gap: 20px;
 }
 .main-menu-list li a{
-  background: white;
+  background: var(--fundo-2);
   padding: 1rem 2rem;
   border-radius: 20px;
   text-transform: uppercase;
-  color: black;
+  color: var(--texto);
   display: block;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
 }
 
 .main-menu-list li a:hover{
-  border: red solid 1px;
+  border: var(--cor-primaria) solid 2px;
 }
 
 /*  CONTENT */
@@ -71,7 +93,7 @@ p{
 }
 
 .text-content{
-  background: white;
+  background: var(--fundo-2);
   display: grid;
   gap: 20px;
   justify-items: end;
@@ -85,7 +107,7 @@ p{
   position: absolute;
   content: "";
   padding: 3px 30px;
-  background: red;
+  background: var(--cor-primaria);
   top: 30px;
   right: -30px;
 }
@@ -100,15 +122,15 @@ p{
 }
 
 .text-content a{
-  background: red;
-  color: white;
+  background: var(--cor-primaria);
+  color: var(--botao);
   padding: 1rem 2rem;
   border-radius: 20px;
   text-transform: uppercase;
 }
 
 .text-content a:hover{
-  background: rgb(160, 0, 0);
+  background: var(--cor-primaria-escura);
 }
 
 .title-2{
@@ -121,26 +143,27 @@ p{
   
   padding: 40px 30px ;
   text-transform: uppercase;
-  color:rgba(0,0,0,.2);
-  background-image: url(/classes-origamid/HTML/5_Parte/05-css-propriedades/0506-refatorar-exercicio/web-final/img/onda.svg);
+  color:var(--subtitle);
+  background-image: var(--onda);
   background-size:700px;
 }
 
 .descriptions-content{
   padding: 20px;
-  background: white;
+  background: var(--fundo-2);
 }
 
 .descriptions-list{
   display: grid;
-  background: white;
+  background: var(--fundo-2);
+  gap: 20px;
 }
 
 .descriptions-list li:hover{
-  border-left: red solid 2px;
+  border-left: var(--cor-primaria) solid 2px;
 }
 .descriptions:nth-child(odd){
-  background: #f7f7f7;
+  background: var(--fundo-1);
 }
 
 .descriptions{
@@ -150,8 +173,13 @@ p{
   padding:10px;
 }
 
+.descriptions h3{
+  margin: 0px;
+}
+
 .descriptions p{
   grid-column: 2;
+  margin: 0px;
   padding: 5px 0px;
 }
 
@@ -162,7 +190,7 @@ p{
 /*  FOOTER  */
 
 .footer{
-  background: white;
+  background: var(--fundo-2);
   padding: 20px 0px;
   width: 100%;
   text-align: center;
@@ -194,7 +222,7 @@ p{
   }
 
   .text-content{
-    background: white;
+    background: var(--fundo-2);
     display: grid;
     gap: 10px;
     justify-items: end;
